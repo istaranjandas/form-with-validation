@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         <!-- Optional JavaScript -->
+         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+         <script src="js/fsd7.js"></script>        
+         <link rel="stylesheet" href="css/fsd7.css">
+    </head>
+    <body onload="hideform();">
+        <center>
+            <h3>FORM</h3>
+            <button type="button" id="formshow" class="btn btn-danger" value="Open Form">
+                Open
+            </button>
+            <button type="button" id="formhide" class="btn btn-danger" value="hide Form">
+                Close
+            </button>
+        </center>
+        <div class="container" id="formid">
+            <form id="studentform" onsubmit="return submitjs();" name="student_form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputfname">First Name</label>
+                      <input type="text" onblur="blurjs(this);" onfocus="focusjs(this);" class="form-control" id="inputfname" placeholder="Enter name here" required>
+                      <p id="spanfirstname"></p>
+                      <p id="spanfirstname2"></p>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputlname">Last Name</label>
+                      <input type="text" onblur="blurjs(this);mylastname();" onfocus="focusjs(this);" class="form-control" id="inputlname" placeholder="Enter Name here">
+                      <p id="spanlastname"></p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputGuardian">Guardian's Name</label>
+                        <input type="text" onblur="blurjs(this);myguardiansname();" onfocus="focusjs(this);" class="form-control" id="inputGuardian" placeholder="Enter Name here" required>
+                        <p id="spanguardian"></p>
+                </div>
+                </div>
+              
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" onblur="blurjs(this);" onfocus="focusjs(this);fillmail();" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputnumber">Contact No</label>
+                      <input type="text" onblur="blurjs(this);mycontactnumber();" onfocus="focusjs(this);" class="form-control" id="inputnumber" placeholder="Phone no" required>
+                      <p id="spancontactnumber"></p>
+                    </div>
+                    
+                </div>
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-6">
+                        <label for="inputDOR">Date of Joining</label>
+                        <input type="date" onblur="blurjs(this);" onfocus="focusjs(this);" id="inputDOR">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputage">Age:</label>
+                        <input type="text" onblur="blurjs(this);myage();" onfocus="focusjs(this);" id="inputage" class="form-control" placeholder="Age">
+                        <p id="spanage"></p>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputbranch">Branch</label>
+                        <select id="inputbranch" onblur="blurjs(this);" onfocus="focusjs(this);" class="form-control" required>
+                            <option selected>Choose Branch</option>
+                            <option>EIE</option>
+                            <option>ECE</option>
+                            <option>EEE</option>
+                            <option>CSE</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCity">City</label>
+                    <input type="text" onblur="blurjs(this);" onfocus="focusjs(this);" class="form-control" id="inputCity" required>
+                    <p id="spancity"></p>
+                  </div>
+                  <div class="form-group ">
+                    <label for="inputState">State</label>
+                    <select id="inputState" onblur="blurjs(this);" onfocus="focusjs(this);" class="form-control" required>
+                      <option selected>Choose State</option>
+                      <option>Andhra Pradesh</option>
+                      <option>Arunachal Pradesh</option>
+                      <option>Assam</option>
+                      <option>Bihar</option>
+                      <option>Chattisgarh</option>
+                      <option>Goa</option>
+                      <option>Gujarat</option>
+                      <option>Haryana</option>
+                      <option>Himachal Pradesh</option>
+                      <option>Jammu and Kashmir</option>
+                      <option>Jharkhand</option>
+                      <option>Karnataka</option>
+                      <option>Kerala</option>
+                      <option>Madhya Pradesh</option>
+                      <option>Maharashtra</option>
+                      <option>Manipur</option>
+                      <option>Meghalaya</option>
+                      <option>Mizoram</option>
+                      <option>Nagaland</option>
+                      <option>Odisha</option>
+                      <option>Punjab</option>
+                      <option>Rajasthan</option>
+                      <option>Sikkim</option>
+                      <option>Tamil Nadu</option>
+                      <option>Telangana</option>
+                      <option>Tripura</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Uttarakhand</option>
+                      <option>West Bengal</option>
+                    </select>
+                  </div>
+                  <div class="form-group ">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" onblur="blurjs(this);" onfocus="focusjs(this);" class="form-control" id="inputZip" required>
+                    <span id="spanzipy"></span>
+                  </div>
+                
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="inputgender">Gender : </label><br>
+                    <input type="radio"  id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                  </div>
+                  <div class="form-group">
+                      <label for="inputcategory">Category : </label><br>
+                      <input type="radio" id="age1" name="age" value="30">
+                      <label for="age1">General</label><br>
+                      <input type="radio" id="age2" name="age" value="60">
+                      <label for="age2">SC/ST</label><br>
+                      <input type="radio" id="age3" name="age" value="100">
+                      <label for="age3">Others</label><br>
+                  </div>
+                  <div class="form-group">                 
+                    <label for="inputcategory">Facility Requested : </label><br>
+                    <input type="radio" id="fac1" name="bus" value="30">
+                    <label for="fac1">Bus</label><br>
+                    <input type="radio" id="fac2" name="hostel" value="60">
+                    <label for="fac2">Hostel</label> <br>
+                    <input type="radio" id="fac3" name="fees" value="90">
+                    <label for="fac3">Fees</label><br>
+                    <input type="radio" id="fac4" name="canteen" value="120">
+                    <label for="fac4">Canteen</label><br>
+                    <input type="radio" id="fac5" name="transfer" value="150">
+                    <label for="fac5">Transfer</label>  <br>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label" for="gridCheck">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit Form</button>
+              </form>  
+        </div>
+        <style>
+            #studentform{
+                padding: 50px 25px 50px 25px;
+            }
+
+            body{
+                background-color:rgb(255, 255, 255);
+                padding-top:70px;
+            }
+
+            .container{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color:black;
+                color: cornsilk;
+            }
+            .jumbotron1{
+                margin:25px;
+                padding:25px;
+                background-color: pink;
+                font-size: x-large;
+                text-align: center;
+            }
+            .jumbotron2{
+                margin:25px;
+                padding:25px;
+                background-color:aliceblue;
+                font-size: x-large;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function fillmail()
+            {
+                var y = document.forms["student_form"]["inputfname"].value; 
+                var z = document.forms["student_form"]["inputlname"].value;
+                if(y == "" && z==""){
+                    var mail= "";
+                }
+                else
+                {
+                    var mail= y+z+"@gmail.com";
+                }
+                document.getElementById("inputEmail4").value = mail;
+            }
+
+            function focusjs(x)
+            {
+                x.style.color = "white";
+                x.style.backgroundColor="black";
+            }
+
+            function blurjs(x)
+            {
+                x.style.color = "black";
+                x.style.backgroundColor="white";
+            }
+
+            function submitjs()
+            {
+                alert("Submit this form?");
+                return true;
+            }
+
+            // Form Validation
+
+
+            $(document).ready(function(){
+                $('#formid').hide();
+                $('#formshow').click(function(){
+                    $('#formid').animate({
+                        height:"toggle"
+
+                    },1000,function(){});
+                    console.log("hello");
+                });
+                $('#formhide').click(function(){
+                    $("#formid").hide('slow');
+                    console.log("hi");
+                });
+                $("#inputfname").change(function(){
+                    var x = $("#inputfname").val();
+                    var letters = /^[A-Za-z]+$/;
+                    if(!(letters.test(x)) || x.length==0)
+                    {
+                        $("#spanfirstname").replaceWith("<span id='spanfirstname' style='color:red'> Alphabets Only </span>");
+                    }
+                    else{
+                        $("#spanfirstname").replaceWith("<span id='spanfirstname' style='color:green'> Input Accepted </span>"); 
+                    }
+                });
+                $("#inputlname").change(function(){
+                    var x = $("#inputlname").val();
+                    var letters = /^[A-Za-z]+$/;
+                    if(!(letters.test(x)) || x.length==0)
+                    {
+                        $("#spanlastname").replaceWith("<span id='spanlastname' style='color:red'> Alphabets Only </span>");
+                    }
+                    else{
+                        $("#spanlastname").replaceWith("<span id='spanlastname' style='color:green'> Input Accepted </span>"); 
+                    }
+                });
+                $("#inputGuardian").change(function(){
+                    var x = $("#inputGuardian").val();
+                    var letters = /^[A-Za-z]+$/;
+                    if(!(letters.test(x)) || x.length==0)
+                    {
+                        $("#spanguardian").replaceWith("<span id='spanguardian' style='color:red'> Alphabets Only </span>");
+                    }
+                    else{
+                        $("#spanguardian").replaceWith("<span id='spanguardian' style='color:green'> Input Accepted </span>"); 
+                    }
+                });
+                $("#inputnumber").change(function(){
+                    a = document.getElementById("inputnumber").value;
+                    if (isNaN(a))
+                    { 
+                        $("#spancontactnumber").replaceWith("<span id='spancontactnumber' style='color:red'> Numbers Only </span>");
+                    }
+                    else if (a.length>10)
+                    {
+                        $("#spancontactnumber").replaceWith("<span id='spancontactnumber' style='color:red'> Max 10 Numbers Only </span>");
+                    }
+                    else if (a.length<10) 
+                    {
+                        $("#spancontactnumber").replaceWith("<span id='spancontactnumber' style='color:red'> Min 10 Numbers Only </span>");
+                    }
+                    else
+                    {
+                        $("#spancontactnumber").replaceWith("<span id='spancontactnumber' style='color:green'> Input Accepted </span>");
+                    }
+                });
+                $("#inputage").change(function(){
+                    a = document.getElementById("inputage").value;
+                    if (isNaN(a))
+                    { 
+                        $("#spanage").replaceWith("<span id='spanage' style='color:red'> Numbers Only </span>");
+                    }
+                    else
+                    {
+                        $("#spanage").replaceWith("<span id='spanage' style='color:green'> Input Accepted </span>");
+                    }
+                });
+                $("#inputCity").change(function(){
+                    var x = $("#inputCity").val();
+                    var letters = /^[A-Za-z]+$/;
+                    if(!(letters.test(x)) || x.length==0)
+                    {
+                        $("#spancity").replaceWith("<span id='spancity' style='color:red'> Alphabets Only </span>");
+                    }
+                    else{
+                        $("#spancity").replaceWith("<span id='spancity' style='color:green'> Input Accepted </span>"); 
+                    }
+                });
+                $("#inputZip").change(function(){
+                    a = document.getElementById("inputZip").value;
+                    if (isNaN(a))
+                    { 
+                        $("#spanzipy").replaceWith("<span id='spanzipy' style='color:red'> Numbers Only </span>");
+                    }
+                    else
+                    {
+                        $("#spanzipy").replaceWith("<span id='spanzipy' style='color:green'> Input Accepted </span>");
+                    }
+                });
+                
+            });
+        </script>
+    </body>
+</html>
